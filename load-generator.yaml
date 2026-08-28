@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: apache-load-job
+  namespace: apache
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      containers:
+      - name: load
+        image: busybox
+        command:
+        - sh
+        - -c
+        - |
+          # loop to generate sustained load; stop by deleting the Job
+          while true; do
+          wget -q -O- http://notes-app-service.nginx.svc.cluster.local >/dev/null
+            sleep 0.1
+          done
+      restartPolicy: Never
