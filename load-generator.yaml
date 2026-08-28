@@ -1,8 +1,8 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: apache-load-job
-  namespace: apache
+  name: node-app-load-job
+  namespace: nginx
 spec:
   backoffLimit: 0
   template:
@@ -16,7 +16,7 @@ spec:
         - |
           # loop to generate sustained load; stop by deleting the Job
           while true; do
-          wget -q -O- http://notes-app-service.nginx.svc.cluster.local >/dev/null
+            wget -q -O- http://notes-app-service.nginx.svc.cluster.local:8000 >/dev/null
             sleep 0.1
           done
       restartPolicy: Never

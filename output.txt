@@ -1,0 +1,69 @@
+Name:               my-cluster-worker
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=my-cluster-worker
+                    kubernetes.io/os=linux
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: unix:///run/containerd/containerd.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Tue, 25 Aug 2026 15:50:59 +0000
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  my-cluster-worker
+  AcquireTime:     <unset>
+  RenewTime:       Fri, 28 Aug 2026 16:16:40 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Fri, 28 Aug 2026 16:14:15 +0000   Tue, 25 Aug 2026 15:50:59 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Fri, 28 Aug 2026 16:14:15 +0000   Tue, 25 Aug 2026 15:50:59 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Fri, 28 Aug 2026 16:14:15 +0000   Tue, 25 Aug 2026 15:50:59 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Fri, 28 Aug 2026 16:14:15 +0000   Tue, 25 Aug 2026 15:51:15 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  172.18.0.4
+  Hostname:    my-cluster-worker
+Capacity:
+  cpu:                2
+  ephemeral-storage:  19135360Ki
+  hugepages-2Mi:      0
+  memory:             4000516Ki
+  pods:               110
+Allocatable:
+  cpu:                2
+  ephemeral-storage:  19135360Ki
+  hugepages-2Mi:      0
+  memory:             4000516Ki
+  pods:               110
+System Info:
+  Machine ID:                 84a1b169daf44fefb7ac13f80ab845f1
+  System UUID:                2abd538c-ae10-455e-bb5e-78ec0fecd2db
+  Boot ID:                    126b4012-3a17-4b88-95ea-3056392b6bc4
+  Kernel Version:             7.0.0-1006-aws
+  OS Image:                   Debian GNU/Linux 12 (bookworm)
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  containerd://1.7.18
+  Kubelet Version:            v1.31.2
+PodCIDR:                      10.244.2.0/24
+PodCIDRs:                     10.244.2.0/24
+ProviderID:                   kind://docker/my-cluster/my-cluster-worker
+Non-terminated Pods:          (5 in total)
+  Namespace                   Name                                        CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                                        ------------  ----------  ---------------  -------------  ---
+  apache                      apache-deployment-b8f7fbcc5-5bqmg           100m (5%)     200m (10%)  128Mi (3%)       256Mi (6%)     39h
+  ingress-nginx               ingress-nginx-controller-8bf94c74f-lfs72    100m (5%)     0 (0%)      90Mi (2%)        0 (0%)         2d1h
+  kube-system                 kindnet-8dzqw                               100m (5%)     100m (5%)   50Mi (1%)        50Mi (1%)      3d
+  kube-system                 kube-proxy-7zvpm                            0 (0%)        0 (0%)      0 (0%)           0 (0%)         3d
+  kube-system                 metrics-server-7cfb8cc6dd-xlvzs             100m (5%)     0 (0%)      200Mi (5%)       0 (0%)         42h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests     Limits
+  --------           --------     ------
+  cpu                400m (20%)   300m (15%)
+  memory             468Mi (11%)  306Mi (7%)
+  ephemeral-storage  0 (0%)       0 (0%)
+  hugepages-2Mi      0 (0%)       0 (0%)
+Events:              <none>
