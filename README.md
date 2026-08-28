@@ -2,7 +2,7 @@
 
 ## Quick Demo
 
-![HPA Autoscaling](https://raw.githubusercontent.com/sagarpyakurel/Django-project_Horizontal_Pod_Autoscale-HPA-/main/hpa-demo.png)
+![HPA Autoscaling](demo.png)
 
 The screenshot shows: CPU load triggers scale-up (1→4 replicas), then scale-down when load stops.
 
